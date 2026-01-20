@@ -5,5 +5,8 @@
     "command": "/path/to/your/statusline",
     "padding": 0
   },
+  "env": {
+    "ENABLE_TOOL_SEARCH": true
+  },
   "alwaysThinkingEnabled": false
 }
