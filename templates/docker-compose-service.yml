@@ -1,0 +1,42 @@
+# templates/docker-compose-service.yml
+# This is a template for a new service in the cognito-stack.
+# It includes best practices for security, health checks, and logging.
+
+services:
+  new-service:
+    image: your-image-repo/new-service:latest
+    container_name: new-service
+    restart: unless-stopped
+    ports:
+      - "8080:8080" # Expose ports if necessary
+    environment:
+      - NODE_ENV=production
+      # - SECRET_KEY=${NEW_SERVICE_SECRET_KEY} # Load secrets from .env file
+    volumes:
+      - ./data:/app/data # Persist data if necessary
+    networks:
+      - cognito_network # Connect to the main stack network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    # Security Best Practices
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    # For stateless services, consider making the root filesystem read-only
+    # read_only: true
+    # tmpfs:
+    #   - /tmp
+
+networks:
+  cognito_network:
+    external: true

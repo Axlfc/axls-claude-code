@@ -1,154 +1,65 @@
-# Edmund's Claude Code Setup
+# axls-claude-code
 
-My personal Claude Code configuration for productive web development. This plugin provides **14 slash commands** and **11 specialized AI agents** to supercharge your development workflow.
+Este repositorio contiene un plugin para Claude Code diseñado para acelerar el desarrollo en un stack tecnológico específico: Next.js, TypeScript, Fastify, PostgreSQL, Docker y Kubernetes. Es un sistema de "Skills" y "Agentes" especializados, optimizado para los proyectos `cognito-stack`, `Tarragona Connect (TC)` y `RuneScript`.
 
-## Quick Install
+## Filosofía
 
-```bash
-# Step 1: Add the marketplace
-/plugin marketplace add edmund-io/edmunds-claude-code
+Este plugin sigue el principio **"Don't Build Agents, Build Skills Instead"**.
 
-# Step 2: Install the plugin
-/plugin install edmunds-claude-code
-```
-
-## What's Inside
-
-### 📋 Development Commands (7)
-
-- `/new-task` - Analyze code for performance issues
-- `/code-explain` - Generate detailed explanations
-- `/code-optimize` - Performance optimization
-- `/code-cleanup` - Refactoring and cleanup
-- `/feature-plan` - Feature implementation planning
-- `/lint` - Linting and fixes
-- `/docs-generate` - Documentation generation
-
-### 🔌 API Commands (3)
-
-- `/api-new` - Create new API endpoints
-- `/api-test` - Test API endpoints
-- `/api-protect` - Add protection & validation
-
-### 🎨 UI Commands (2)
-
-- `/component-new` - Create React components
-- `/page-new` - Create Next.js pages
-
-### 💾 Supabase Commands (2)
-
-- `/types-gen` - Generate TypeScript types
-- `/edge-function-new` - Create Edge Functions
-
-### 🤖 Specialized AI Agents (11)
-
-**Architecture & Planning**
-- **tech-stack-researcher** - Technology choice recommendations with trade-offs
-- **system-architect** - Scalable system architecture design
-- **backend-architect** - Backend systems with data integrity & security
-- **frontend-architect** - Performant, accessible UI architecture
-- **requirements-analyst** - Transform ideas into concrete specifications
-
-**Code Quality & Performance**
-- **refactoring-expert** - Systematic refactoring and clean code
-- **performance-engineer** - Measurement-driven optimization
-- **security-engineer** - Vulnerability identification and security standards
-
-**Documentation & Research**
-- **technical-writer** - Clear, comprehensive documentation
-- **learning-guide** - Teaching programming concepts progressively
-- **deep-research-agent** - Comprehensive research with adaptive strategies
-
-## Installation
-
-### From GitHub (Recommended)
-
-```bash
-# Add marketplace
-/plugin marketplace add edmund-io/edmunds-claude-code
-
-# Install plugin
-/plugin install edmunds-claude-code
-```
-
-### From Local Clone (for development)
-
-```bash
-git clone https://github.com/edmund-io/edmunds-claude-code.git
-cd edmunds-claude-code
-
-# Add as local marketplace
-/plugin marketplace add /path/to/edmunds-claude-code
-
-# Install plugin
-/plugin install edmunds-claude-code
-```
-
-## Best For
-
-- Next.js developers
-- TypeScript projects
-- Supabase users
-- React developers
-- Full-stack engineers
-
-## Usage Examples
-
-### Planning a Feature
-
-```bash
-/feature-plan
-# Then describe your feature idea
-```
-
-### Creating an API
-
-```bash
-/api-new
-# Claude will scaffold a complete API route with types, validation, and error handling
-```
-
-### Research Tech Choices
-
-Just ask Claude questions like:
-- "Should I use WebSockets or SSE?"
-- "How should I structure this database?"
-- "What's the best library for X?"
-
-The tech-stack-researcher agent automatically activates and provides detailed, researched answers.
-
-## Philosophy
-
-This setup emphasizes:
-- **Type Safety**: Never uses `any` types
-- **Best Practices**: Follows modern Next.js/React patterns
-- **Productivity**: Reduces repetitive scaffolding
-- **Research**: AI-powered tech decisions with evidence
-
-## Requirements
-
-- Claude Code 2.0.13+
-- Works with any project (optimized for Next.js + Supabase)
-
-## Customization
-
-After installation, you can customize any command by editing files in `.claude/commands/` and `.claude/agents/`.
-
-## Contributing
-
-Feel free to:
-- Fork and customize for your needs
-- Submit issues or suggestions
-- Share your improvements
-
-## License
-
-MIT - Use freely in your projects
-
-## Author
-
-Created by Edmund
+*   **Skills (Comandos Slash `/`)**: Son herramientas altamente especializadas y predecibles que generan código o configuración para tareas recurrentes. Son rápidos, eficientes y siguen las mejores prácticas del stack.
+*   **Agentes**: Son expertos autónomos que se activan según el contexto de tu trabajo. Proporcionan orientación estratégica, auditan código y aplican las mejores prácticas, pero no escriben grandes volúmenes de código ellos mismos.
 
 ---
 
-**Note**: This is my personal setup that I've refined over time. Commands are optimized for Next.js + Supabase workflows but work great with any modern web stack.
+## Quick Start
+
+1.  **Instalación**: Clona este repositorio en tu máquina local.
+2.  **Claude Code**: Abre el repositorio en un editor compatible con Claude Code (como VS Code con la extensión de Claude).
+3.  **Uso de Skills**: En un archivo o en el chat, escribe `/` para ver la lista de comandos disponibles.
+    *   **Ejemplo**: Escribe `/api-endpoint` y describe el endpoint que necesitas: `POST /api/users con schema { name: string, email: string } y auth JWT`.
+4.  **Activación de Agentes**: Simplemente trabaja como lo harías normalmente. Los agentes se activarán automáticamente cuando detecten un contexto relevante.
+    *   **Ejemplo**: Empieza a escribir un `Dockerfile` y el `devops-engineer` se activará para ofrecerte consejos sobre optimización y seguridad.
+
+---
+
+## Estructura del Repositorio
+
+```
+axls-claude-code/
+├── README.md
+├── .claude/
+│   ├── commands/     # -> Implementación de los Skills (Slash Commands)
+│   └── agents/       # -> Implementación de los Agentes
+├── docs/             # -> Documentación detallada
+└── templates/        # -> Plantillas de código reutilizables usadas por los Skills
+```
+
+---
+
+## Skills Disponibles
+
+### Desarrollo
+*   `/api-endpoint`: Genera un endpoint completo de API REST para Fastify.
+*   `/component-new`: Crea un nuevo componente de React para Tarragona Connect.
+*   `/store-new`: Genera un nuevo store de Zustand para Tarragona Connect.
+*   `/db-migration`: Crea scripts de migración `up`/`down` para PostgreSQL.
+*   `/new-workflow`: Scaffolding para un workflow de n8n.
+
+### Infraestructura & DevOps
+*   `/docker-service`: Añade un nuevo servicio a un `docker-compose.yml`.
+*   `/k8s-manifest`: Genera manifiestos de Kubernetes (Deployment, Service, etc.).
+*   `/sentry-integration`: Configura Sentry para monitoreo de errores.
+
+### Calidad
+*   `/test-gen`: Genera tests unitarios o de integración (Jest/Pytest).
+*   `/lint-fix`: Formatea y corrige errores de linting en un fragmento de código.
+
+---
+
+## Agentes Especializados
+
+*   **`devops-engineer`**: Experto en Docker, Kubernetes, CI/CD y observabilidad.
+*   **`n8n-workflow-expert`**: Especialista en el diseño de workflows de n8n.
+*   **`postgres-expert`**: Experto en diseño de bases de datos, migraciones y optimización.
+*   **`security-engineer`**: Especialista en compliance ENS/RGPD y seguridad de contenedores.
+*   **`zustand-expert`**: Arquitecto frontend experto en el estado de Tarragona Connect.
