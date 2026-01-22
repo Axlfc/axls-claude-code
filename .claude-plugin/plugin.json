@@ -1,8 +1,8 @@
 {
-  "name": "edmunds-claude-code",
+  "name": "axls-claude-code",
   "version": "1.0.0",
-  "description": "Edmund's personal Claude Code setup with 14 productivity commands and 11 specialized AI agents for modern web development",
-  "author": "Edmund",
+  "description": "Axl's personal Claude Code for modern development",
+  "author": "Axl",
   "license": "MIT",
   "commands": [
     {
@@ -138,24 +138,10 @@
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"],
       "description": "Access up-to-date documentation for any library"
-    },
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"],
-      "description": "Browser automation and web testing capabilities"
-    },
-    "supabase": {
-      "command": "npx",
-      "args": ["-y", "@supabase/mcp-server-supabase"],
-      "description": "Supabase database operations and management"
     }
   },
   "tags": [
     "productivity",
-    "nextjs",
-    "supabase",
-    "typescript",
-    "react",
     "api",
     "development",
     "mcp"

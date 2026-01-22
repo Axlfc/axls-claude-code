@@ -1,21 +1,21 @@
 {
-  "name": "edmunds-claude-code",
+  "name": "axls-claude-code",
   "owner": {
-    "name": "Edmund",
-    "contact": "github.com/edmund-io"
+    "name": "Axel",
+    "contact": "github.com/axlfc"
   },
-  "description": "Edmund's curated Claude Code setup for productive development",
+  "description": "Axl's curated Claude Code setup for productive development",
   "plugins": [
     {
-      "name": "edmunds-claude-code",
+      "name": "axls-claude-code",
       "source": "./",
-      "description": "Personal Claude Code configuration with 14 productivity commands and 11 specialized AI agents for modern web development",
+      "description": "Personal Claude Code configuration for modern development",
       "version": "1.0.0",
       "author": {
-        "name": "Edmund",
+        "name": "Axel",
         "email": "[email protected]"
       },
-      "tags": ["productivity", "nextjs", "supabase", "typescript", "react", "development"]
+      "tags": ["productivity", "development"]
     }
   ]
 }

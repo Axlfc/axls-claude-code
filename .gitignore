@@ -1,9 +1,29 @@
-# macOS
-.DS_Store
+# Environment variables and MCP config (contains API keys)
+.env
+.mcp.json
 
-# Editor
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
 .vscode/
+*.code-workspace
 .idea/
+
+# Node modules (if MCPs install locally)
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Output folders (optional - uncomment if you don't want to track outputs)
+# research/
+# exports/
+# data/
 
 # Local settings (users should not commit these)
 .claude/settings.local.json

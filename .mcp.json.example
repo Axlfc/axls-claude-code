@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "youtube": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@kirbah/mcp-youtube"],
+      "env": {
+        "YOUTUBE_API_KEY": "your-youtube-api-key-here"
+      }
+    },
+    "notion": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_TOKEN": "your-notion-token-here"
+      }
+    }
+  }
+}

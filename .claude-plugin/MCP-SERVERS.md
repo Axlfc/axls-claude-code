@@ -15,38 +15,6 @@ This plugin includes 3 pre-configured MCP servers that enhance Claude Code's cap
 - Works with thousands of libraries
 - No manual searching required
 
-### 2. **Playwright** (`@playwright/mcp`)
-**Purpose**: Browser automation and web testing
-
-**Capabilities**:
-- Navigate websites
-- Take screenshots
-- Interact with web elements
-- Generate test code
-- Access accessibility trees
-
-**Use Cases**:
-- E2E testing
-- Web scraping
-- Browser automation
-- Visual testing
-
-### 3. **Supabase** (`@supabase/mcp-server-supabase`)
-**Purpose**: Supabase database operations
-
-**Capabilities**:
-- Query databases
-- Manage tables
-- Execute SQL
-- Handle authentication
-- Work with storage
-
-**Use Cases**:
-- Database management
-- Schema exploration
-- Data queries
-- Admin operations
-
 ## Servers Not Included (Not Yet Available)
 
 The following servers were requested but don't have official MCP implementations yet:
