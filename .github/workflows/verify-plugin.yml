@@ -1,0 +1,34 @@
+name: Verify Plugin Structure
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install jq
+      run: sudo apt-get update && sudo apt-get install -y jq
+
+    - name: Run verification script
+      run: |
+        chmod +x scripts/verify-plugin.sh
+        ./scripts/verify-plugin.sh
+
+    - name: Verify JSON validity
+      run: |
+        jq empty .claude-plugin/plugin.json
+        echo "✅ plugin.json is valid"
+
+    - name: Check file structure
+      run: |
+        test -d .claude/skills || (echo "❌ .claude/skills missing" && exit 1)
+        test -d .claude/commands || (echo "❌ .claude/commands missing" && exit 1)
+        test -d .claude/agents || (echo "❌ .claude/agents missing" && exit 1)
+        echo "✅ Directory structure valid"
