@@ -139,7 +139,7 @@ The conversion from agents to skills was driven by:
 - When you want progressive disclosure (basic → advanced)
 - When implementing best practices in your stack
 
-Skills are automatically activated based on context keywords. See `.claude/hooks/skill-rules.json` for activation configuration.
+Skills are automatically activated based on context keywords.
 
 ---
 
@@ -162,5 +162,4 @@ All functionality is preserved, with added progressive disclosure and production
 
 - [SKILLS_REFERENCE.md](./SKILLS_REFERENCE.md) - Complete skills documentation
 - [COMMANDS_REFERENCE.md](./COMMANDS_REFERENCE.md) - All slash commands
-- [.claude/hooks/skill-rules.json](../.claude/hooks/skill-rules.json) - Skill activation configuration
 - [AGENT_TO_SKILL_CONVERSION_REPORT.md](../AGENT_TO_SKILL_CONVERSION_REPORT.md) - Detailed conversion report

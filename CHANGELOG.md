@@ -36,10 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `n8n-workflow-expert` agent
   - `postgres-expert` agent
   - `zustand-expert` agent
-- Non-standard hooks system:
-  - `.claude/hooks/skill-rules.json` - Custom activation system
-  - `.claude/hooks/skill-activation-prompt.md` - Custom routing logic
-  - `.claude/hooks/post-tool-use-tracker.md` - Analytics placeholder
+- Non-standard hooks system
 
 ### Fixed
 - Fixed agent/skill counts in CLAUDE.md and README.md (agents: 6→2, skills: 12→16)
@@ -51,10 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2026-01-23
 
 ### Added
-- **Hooks System:** Skill auto-activation system with 3 hook files
-  - `skill-activation-prompt.md` - Intelligent skill routing
-  - `post-tool-use-tracker.md` - Usage analytics tracking
-  - `skill-rules.json` - Configuration for 6 auto-activated skills
+- **Hooks System:** Skill auto-activation system (deprecated in v1.2.1)
 - **Templates:** Critical development templates
   - `eslint.config.js` - Strict TypeScript ESLint configuration
   - `jest.config.ts` - TypeScript Jest configuration
