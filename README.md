@@ -1,9 +1,32 @@
 # axls-claude-code
 
-[![Version](https://img.shields.io/badge/version-1.2.1-blue.svg)](https://github.com/Axlfc/axls-claude-code/releases)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-purple.svg)](https://claude.ai)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue.svg)](https://www.typescriptlang.org/)
+![Version](https://img.shields.io/badge/version-1.2.1-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Claude Code](https://img.shields.io/badge/Claude%20Code-2.0.13%2B-purple)
+![Setup Time](https://img.shields.io/badge/setup-2%20minutes-brightgreen)
+
+> Personal Claude Code plugin with 10 commands, 16 skills, and 2 agents for modern full-stack development
+
+## ⚡ Quick Start (2 Minutes)
+
+```bash
+# 1. Clone
+git clone https://github.com/Axlfc/axls-claude-code.git
+cd axls-claude-code
+
+# 2. Load plugin
+claude --plugin-dir .
+
+# 3. Verify (inside Claude Code)
+/plugin list  # Should show axls-claude-code
+
+# 4. Try it
+/api-endpoint  # Generate REST API endpoint
+```
+
+**[Full Setup Guide →](.github/QUICK_SETUP.md)**
+
+---
 
 Este repositorio contiene un plugin para Claude Code diseñado para acelerar el desarrollo en un stack tecnológico específico: **Next.js, TypeScript, Fastify, PostgreSQL, Docker y Kubernetes**. Es un sistema de "Skills" y "Agentes" especializados, optimizado para los proyectos `cognito-stack`, `Tarragona Connect (TC)` y `RuneScript`.
 
