@@ -23,9 +23,9 @@ Este repositorio es un plugin de Claude Code para el desarrollo moderno, enfocad
 - **Commits:** Conventional Commits standard.
 
 ## Available Tools
-- **Commands:** 10 slash commands para acciones rápidas (ver @docs/COMMANDS_REFERENCE.md).
-- **Agents:** 6 agentes de IA especializados (ver @docs/AGENTS_REFERENCE.md).
-- **Skills:** 12 skills para flujos de trabajo complejos (ver @docs/SKILLS_REFERENCE.md).
+- **Commands:** 10 slash commands para acciones rápidas (ver @docs/COMMANDS_REFERENCE.md)
+- **Agents:** 2 specialized AI agents (ver @docs/AGENTS_REFERENCE.md)
+- **Skills:** 16 skills para flujos de trabajo complejos (ver @docs/SKILLS_REFERENCE.md)
 
 ## Important Context
 - **Production-Ready:** Todo el código generado debe ser TypeScript `strict`, incluir manejo de errores robusto, validación de inputs (con Zod), y logging estructurado.

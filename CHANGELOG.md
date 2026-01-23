@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-01-23
+
+### Added
+- 4 new skills converted from agents with progressive disclosure:
+  - `devops-engineer` skill (Docker, Kubernetes, CI/CD, observability)
+  - `n8n-workflow-expert` skill (workflow patterns, integration, testing)
+  - `postgres-expert` skill (schema design, indexing, optimization)
+  - `zustand-expert` skill (store patterns, persistence, TC stores)
+- 16 supporting files across 4 new skills (7,310+ lines of documentation)
+- Production-ready examples for all new skills
+
+### Changed
+- Converted 4 agents to skills following Anthropic best practices
+- Applied progressive disclosure pattern to new skills
+- Updated all documentation to reflect agent/skill inventory changes
+
+### Removed
+- 4 agent files (converted to skills):
+  - `devops-engineer` agent
+  - `n8n-workflow-expert` agent
+  - `postgres-expert` agent
+  - `zustand-expert` agent
+
+### Fixed
+- Corrected agent/skill counts in CLAUDE.md and README.md
+
 ## [1.1.0] - 2026-01-23
 
 ### Added

@@ -1,6 +1,6 @@
 # axls-claude-code
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Axlfc/axls-claude-code/releases)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/Axlfc/axls-claude-code/releases)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-purple.svg)](https://claude.ai)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue.svg)](https://www.typescriptlang.org/)
@@ -22,29 +22,37 @@ Este repositorio contiene un plugin para Claude Code diseñado para acelerar el 
 - `/k8s` - Generate Kubernetes manifests
 - `/validate` - Create Zod validation schemas
 
-### 🤖 Agents
-6 specialized AI agents:
-- `frontend-architect` - Frontend design and architecture
-- `backend-engineer` - Backend infrastructure and optimization
-- `devops-engineer` - Infrastructure and deployment expertise
-- `db-architect` - Database design and optimization
-- `security-engineer` - Security audits and best practices
-- `code-reviewer` - Code quality and standards enforcement
+### 🤖 2 AI Agents
+- `mcp-finder` - MCP server discovery and configuration
+- `security-engineer` - Security auditing and hardening
 
-### 💡 Skills
-12 specialized workflow skills:
-- State management optimization
-- Database schema design
-- API endpoint generation
-- Component architecture
-- Performance optimization
-- Security hardening
-- Testing strategy
-- Documentation generation
-- Docker optimization
-- Kubernetes deployment
-- n8n workflow orchestration
-- Error handling patterns
+### 🎯 16 Specialized Skills
+
+**Creation Tools:**
+- `create-agent` - Build Claude Code agents
+- `create-command` - Build slash commands
+- `create-hook` - Create automation hooks
+- `create-mcp` - Configure MCP servers
+- `create-skill` - Create new skills
+
+**DevOps & Infrastructure:**
+- `devops-engineer` - Docker, Kubernetes, CI/CD, observability
+
+**Database:**
+- `postgres-expert` - Schema design, query optimization, indexing
+
+**State Management:**
+- `zustand-expert` - Store patterns, persistence, TC stores
+
+**n8n Workflow Automation:**
+- `n8n-code-javascript` - JavaScript in n8n Code nodes
+- `n8n-code-python` - Python in n8n Code nodes
+- `n8n-expression-syntax` - n8n expression validation
+- `n8n-mcp-tools-expert` - n8n MCP tools guide
+- `n8n-node-configuration` - Node configuration help
+- `n8n-validation-expert` - Validation error interpretation
+- `n8n-workflow-patterns` - Workflow architectural patterns
+- `n8n-workflow-expert` - Complete workflow design and optimization
 
 ---
 
