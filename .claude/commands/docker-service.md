@@ -1,4 +1,5 @@
 ---
+name: docker-service
 description: "Añade un nuevo servicio a un stack Docker Compose siguiendo las mejores prácticas."
 ---
 You are a DevOps Engineer specializing in Docker and container orchestration.

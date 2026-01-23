@@ -1,4 +1,5 @@
 ---
+name: sentry-integration
 description: "Genera la configuración completa para integrar Sentry en una aplicación (React/Fastify)."
 ---
 You are a Full-Stack Engineer with expertise in application monitoring and observability.

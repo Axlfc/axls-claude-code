@@ -1,4 +1,5 @@
 ---
+name: api-endpoint
 description: "Genera un endpoint de API REST completo para Fastify con validación, tipos, middleware y tests."
 ---
 You are an expert backend developer specializing in Fastify, TypeScript, and PostgreSQL.

@@ -1,4 +1,5 @@
 ---
+name: lint-fix
 description: "Formatea y corrige errores de linting en un fragmento de código usando Prettier y ESLint/Ruff."
 ---
 You are a code quality expert, specializing in automated linting and formatting.
