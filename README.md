@@ -5,7 +5,7 @@
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-2.0.13%2B-purple)
 ![Setup Time](https://img.shields.io/badge/setup-2%20minutes-brightgreen)
 
-> Personal Claude Code plugin with 10 commands, 16 skills, and 2 agents for modern full-stack development
+> Personal Claude Code plugin with 10 commands, 16 skills, and 4 agents for modern full-stack development
 
 ## ⚡ Quick Start (2 Minutes)
 
@@ -45,9 +45,11 @@ Este repositorio contiene un plugin para Claude Code diseñado para acelerar el 
 - `/k8s` - Generate Kubernetes manifests
 - `/validate` - Create Zod validation schemas
 
-### 🤖 2 AI Agents
+### 🤖 4 AI Agents
 - `mcp-finder` - MCP server discovery and configuration
 - `security-engineer` - Security auditing and hardening
+- `observability-engineer` - Logs, metrics, and monitoring (Loki, Prometheus)
+- `cicd-engineer` - CI/CD pipelines and deployments (Forgejo, K8s)
 
 ### 🎯 16 Specialized Skills
 
@@ -105,7 +107,7 @@ En cualquier archivo o en el chat, escribe `/` para ver la lista de comandos dis
 -   **Ejemplo**: Escribe `/api-endpoint` y describe el endpoint que necesitas: `POST /api/users con schema { name: string, email: string } y auth JWT`.
 
 ### 4. Activación de Agentes
-Los 2 agentes especializados (mcp-finder y security-engineer) se activan automáticamente según el contexto relevante. Para más detalles, consulta [docs/AGENTS_REFERENCE.md](./docs/AGENTS_REFERENCE.md).
+Los 4 agentes especializados (mcp-finder, security-engineer, observability-engineer, y cicd-engineer) se activan automáticamente según el contexto relevante. Para más detalles, consulta [docs/AGENTS_REFERENCE.md](./docs/AGENTS_REFERENCE.md).
 
 ---
 

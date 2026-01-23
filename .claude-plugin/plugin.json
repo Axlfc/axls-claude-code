@@ -1,6 +1,6 @@
 {
   "name": "axls-claude-code",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "Axl's personal Claude Code for modern development",
   "author": "Axl",
   "license": "MIT",
@@ -148,6 +148,16 @@
       "name": "security-engineer",
       "path": ".claude/agents/security-engineer.md",
       "description": "Experto en compliance ENS/RGPD, seguridad de contenedores y auditoría."
+    },
+    {
+      "name": "observability-engineer",
+      "path": ".claude/agents/observability-engineer.md",
+      "description": "Handles queries about logs, metrics, monitoring, health status, and performance troubleshooting. Use for Loki, LogQL, Prometheus, PromQL, and Grafana related questions for services like Ollama, n8n, PostgreSQL, and Qdrant in the cognito-stack."
+    },
+    {
+      "name": "cicd-engineer",
+      "path": ".claude/agents/cicd-engineer.md",
+      "description": "Handles queries about CI/CD, pipelines, deployments, builds, and releases. Interacts with Forgejo and Kubernetes to manage workflows for Tarragona Connect and cognito-stack."
     }
   ],
   "mcpServers": {
