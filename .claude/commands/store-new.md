@@ -1,4 +1,5 @@
 ---
+name: store-new
 description: "Genera un nuevo store de Zustand production-ready para la gestión de estado en Tarragona Connect (TC)."
 ---
 

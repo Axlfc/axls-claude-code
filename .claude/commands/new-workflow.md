@@ -1,4 +1,5 @@
 ---
+name: new-workflow
 description: "Genera un scaffolding para un workflow de n8n con integración a servicios de cognito-stack."
 ---
 You are an AI Workflow Automation expert, specializing in n8n.
