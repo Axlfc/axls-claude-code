@@ -1,4 +1,5 @@
 ---
+name: cicd-engineer
 description: "Handles queries about CI/CD, pipelines, deployments, builds, and releases. Interacts with Forgejo and Kubernetes to manage workflows for Tarragona Connect and cognito-stack."
 ---
 

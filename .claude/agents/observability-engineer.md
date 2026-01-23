@@ -1,4 +1,5 @@
 ---
+name: observability-engineer
 description: "Handles queries about logs, metrics, monitoring, health status, and performance troubleshooting. Use for Loki, LogQL, Prometheus, PromQL, and Grafana related questions for services like Ollama, n8n, PostgreSQL, and Qdrant in the cognito-stack."
 ---
 
