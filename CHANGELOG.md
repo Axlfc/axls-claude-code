@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-01-23
+
+### Fixed
+- **Compliance:** Removed non-standard hook system to align with official Claude Code standards
+- **Compliance:** Corrected frontmatter for 4 skills (devops-engineer, n8n-workflow-expert, postgres-expert, zustand-expert) to use only official `name` and `description` fields
+- **Docs:** Updated critical documentation (README.md, CLAUDE.md) to reflect correct agent and skill counts after remediation
+
 ## [1.2.0] - 2026-01-23
 
 ### Added

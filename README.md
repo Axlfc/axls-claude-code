@@ -1,6 +1,6 @@
 # axls-claude-code
 
-[![Version](https://img.shields.io/badge/version-1.2.0-blue.svg)](https://github.com/Axlfc/axls-claude-code/releases)
+[![Version](https://img.shields.io/badge/version-1.2.1-blue.svg)](https://github.com/Axlfc/axls-claude-code/releases)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-purple.svg)](https://claude.ai)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue.svg)](https://www.typescriptlang.org/)
