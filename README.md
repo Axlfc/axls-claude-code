@@ -82,9 +82,7 @@ En cualquier archivo o en el chat, escribe `/` para ver la lista de comandos dis
 -   **Ejemplo**: Escribe `/api-endpoint` y describe el endpoint que necesitas: `POST /api/users con schema { name: string, email: string } y auth JWT`.
 
 ### 4. Activación de Agentes
-Simplemente trabaja como lo harías normalmente. Los agentes se activarán automáticamente cuando detecten un contexto relevante.
-
--   **Ejemplo**: Empieza a escribir un `Dockerfile` y el agente `devops-engineer` se activará para ofrecerte consejos sobre optimización y seguridad.
+Los 2 agentes especializados (mcp-finder y security-engineer) se activan automáticamente según el contexto relevante. Para más detalles, consulta [docs/AGENTS_REFERENCE.md](./docs/AGENTS_REFERENCE.md).
 
 ---
 
@@ -137,37 +135,6 @@ A continuación se muestra una lista de los principales skills. Para una descrip
 - **/code-cleanup**: Realiza una limpieza general del código.
 - **/feature-plan**: Ayuda a diseñar un plan de implementación.
 - **/new-task**: Crea una nueva tarea o issue.
-
-</details>
-
----
-
-## Agentes Especializados
-
-Estos son los agentes que trabajan proactivamente para ayudarte. Para una descripción detallada de sus roles y activadores, consulta la [**Referencia de Agentes**](./docs/AGENTS_REFERENCE.md).
-
-<details>
-<summary><strong>Ver lista de Agentes</strong></summary>
-
-### Arquitectura y Diseño
-- **`system-architect`**: Ofrece orientación en el diseño de arquitectura de software.
-- **`backend-architect`**: Especialista en el diseño de APIs y lógica de negocio.
-- **`frontend-architect`**: Experto en arquitectura de aplicaciones frontend.
-- **`postgres-expert`**: Asistencia experta en todo lo relacionado con PostgreSQL.
-- **`n8n-workflow-expert`**: Especialista en el diseño de workflows de n8n.
-
-### Calidad y Cumplimiento
-- **`devops-engineer`**: Experto en Docker, Kubernetes, CI/CD y observabilidad.
-- **`security-engineer`**: Especialista en seguridad de aplicaciones y cumplimiento normativo.
-- **`performance-engineer`**: Ayuda a identificar y solucionar cuellos de botella de rendimiento.
-- **`refactoring-expert`**: Sugiere refactorizaciones para mejorar la calidad del código.
-
-### Investigación y Documentación
-- **`tech-stack-researcher`**: Realiza investigaciones sobre nuevas tecnologías.
-- **`technical-writer`**: Ayuda a escribir documentación clara y concisa.
-- **`learning-guide`**: Proporciona recursos de aprendizaje y tutoriales.
-- **`deep-research-agent`**: Realiza investigación profunda sobre un tema específico.
-- **`requirements-analyst`**: Ayuda a refinar los requisitos de una nueva funcionalidad.
 
 </details>
 

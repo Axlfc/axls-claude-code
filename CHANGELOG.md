@@ -29,9 +29,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `n8n-workflow-expert` agent
   - `postgres-expert` agent
   - `zustand-expert` agent
+- Non-standard hooks system:
+  - `.claude/hooks/skill-rules.json` - Custom activation system
+  - `.claude/hooks/skill-activation-prompt.md` - Custom routing logic
+  - `.claude/hooks/post-tool-use-tracker.md` - Analytics placeholder
 
 ### Fixed
-- Corrected agent/skill counts in CLAUDE.md and README.md
+- Fixed agent/skill counts in CLAUDE.md and README.md (agents: 6→2, skills: 12→16)
+- Fixed skill frontmatters to include required `name` field per Anthropic standards
+- Removed non-standard `triggers` field from skill frontmatters
+- Updated documentation to remove references to non-standard hook system
+- Fixed README.md example referencing removed `devops-engineer` agent
 
 ## [1.1.0] - 2026-01-23
 

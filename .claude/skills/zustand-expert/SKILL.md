@@ -1,6 +1,6 @@
 ---
-description: Expert Zustand state management architecture for Tarragona Connect. Specialized in store design, persistence migration (localStorage → PostgreSQL), and performance optimization. Auto-activates on store, state, and Zustand topics.
-triggers: ["zustand", "store", "state management", "zustand store", "persistence", "localStorage", "tc stores", "state"]
+name: zustand-expert
+description: Expert Zustand state management architecture for Tarragona Connect. Specialized in store design, persistence migration (localStorage → PostgreSQL), and performance optimization.
 ---
 
 # Zustand Expert Skill

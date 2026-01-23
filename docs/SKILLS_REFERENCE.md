@@ -354,30 +354,6 @@ These skills help you create new agents, commands, hooks, MCP servers, and skill
 
 ---
 
-## Skill Activation
-
-Skills are automatically activated based on context keywords. Configuration is in `.claude/hooks/skill-rules.json`:
-
-```json
-{
-  "skills": [
-    {
-      "name": "devops-engineer",
-      "triggers": ["docker", "kubernetes", "k8s", "deployment"],
-      "confidence_threshold": 0.8
-    },
-    {
-      "name": "postgres-expert",
-      "triggers": ["postgresql", "postgres", "database", "schema"],
-      "confidence_threshold": 0.8
-    },
-    // ... etc
-  ]
-}
-```
-
----
-
 ## References
 
 - [AGENTS_REFERENCE.md](./AGENTS_REFERENCE.md) - 2 remaining AI agents

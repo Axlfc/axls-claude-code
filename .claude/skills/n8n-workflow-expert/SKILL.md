@@ -1,6 +1,6 @@
 ---
-description: Expert guidance for designing and implementing complex n8n workflows with integration patterns for Ollama, Qdrant, and PostgreSQL. Auto-activates on n8n, workflow, and automation topics.
-triggers: ["n8n", "workflow", "automation", ".json workflows", "ai orchestration", "task runner", "integration", "node configuration"]
+name: n8n-workflow-expert
+description: Expert guidance for designing and implementing complex n8n workflows with integration patterns for Ollama, Qdrant, and PostgreSQL.
 ---
 
 # n8n Workflow Expert Skill

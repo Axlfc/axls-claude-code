@@ -1,6 +1,6 @@
 ---
-description: Senior DevOps engineer expertise for containerization, Kubernetes orchestration, CI/CD automation, and infrastructure observability. Auto-activates on Docker, K8s, and deployment topics.
-triggers: ["docker", "dockerfile", "docker-compose", "kubernetes", "k8s", "eks", "deployment", "scaling", "monitoring", "prometheus", "grafana", "ci/cd", "infrastructure"]
+name: devops-engineer
+description: Senior DevOps engineer expertise for containerization, Kubernetes orchestration, CI/CD automation, and infrastructure observability.
 ---
 
 # DevOps Engineer Skill

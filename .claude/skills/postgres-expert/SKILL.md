@@ -1,6 +1,6 @@
 ---
-description: Master PostgreSQL database design, optimization, and performance tuning. Expert guidance on schemas, indexing, query optimization, and data integrity. Auto-activates on PostgreSQL, database, and SQL topics.
-triggers: ["postgresql", "postgres", "database", "schema", "migration", "query", "index", "sql", "transaction", "performance"]
+name: postgres-expert
+description: Master PostgreSQL database design, optimization, and performance tuning. Expert guidance on schemas, indexing, query optimization, and data integrity.
 ---
 
 # PostgreSQL Expert Skill
