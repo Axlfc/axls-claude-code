@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "n8n-workflow-patterns",
+      "triggers": ["n8n", "workflow", "automation", "integration", "webhook", "trigger"],
+      "confidence_threshold": 0.75,
+      "auto_activate": true,
+      "description": "Activates when user asks about n8n workflow design or patterns"
+    },
+    {
+      "name": "postgres-expert",
+      "triggers": ["postgresql", "postgres", "database", "query", "migration", "schema", "sql", "index"],
+      "confidence_threshold": 0.8,
+      "auto_activate": true,
+      "description": "Activates for PostgreSQL-related questions"
+    },
+    {
+      "name": "devops-engineer",
+      "triggers": ["docker", "kubernetes", "k8s", "deployment", "ci/cd", "eks", "infrastructure", "devops"],
+      "confidence_threshold": 0.8,
+      "auto_activate": true,
+      "description": "Activates for DevOps and infrastructure topics"
+    },
+    {
+      "name": "zustand-expert",
+      "triggers": ["zustand", "state management", "store", "redux", "context"],
+      "confidence_threshold": 0.75,
+      "auto_activate": true,
+      "description": "Activates for state management questions"
+    },
+    {
+      "name": "n8n-code-javascript",
+      "triggers": ["n8n", "javascript", "code node", "function"],
+      "confidence_threshold": 0.85,
+      "auto_activate": true,
+      "description": "Activates for n8n JavaScript Code node questions"
+    },
+    {
+      "name": "n8n-code-python",
+      "triggers": ["n8n", "python", "code node"],
+      "confidence_threshold": 0.85,
+      "auto_activate": true,
+      "description": "Activates for n8n Python Code node questions"
+    }
+  ],
+  "settings": {
+    "max_activations_per_prompt": 1,
+    "fallback_to_general": true,
+    "log_activations": false
+  }
+}

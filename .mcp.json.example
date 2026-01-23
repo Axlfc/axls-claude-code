@@ -1,30 +1,47 @@
 {
+  "$schema": "https://schema.anthropic.com/mcp/mcp-config.json",
   "mcpServers": {
-    "youtube": {
-      "type": "stdio",
+    "github": {
       "command": "npx",
-      "args": ["-y", "@kirbah/mcp-youtube"],
+      "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": {
-        "YOUTUBE_API_KEY": "your-youtube-api-key-here"
+        "GITHUB_TOKEN": "ghp_YOUR_TOKEN_HERE"
       }
     },
-    "n8n-mcp": {
+    "postgres": {
       "command": "npx",
-      "args": ["n8n-mcp"],
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
       "env": {
-        "MCP_MODE": "stdio",
-        "LOG_LEVEL": "error",
-        "DISABLE_CONSOLE_OUTPUT": "true",
-        "N8N_API_URL": "https://your-n8n-instance.com",
-        "N8N_API_KEY": "your-api-key-here"
+        "POSTGRES_CONNECTION_STRING": "postgresql://user:password@localhost:5432/database"
+      }
+    },
+    "docker": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-docker"],
+      "env": {
+        "DOCKER_HOST": "unix:///var/run/docker.sock"
+      }
+    },
+    "n8n": {
+      "command": "npx",
+      "args": ["-y", "@n8n-io/mcp-server"],
+      "env": {
+        "N8N_API_KEY": "n8n_api_YOUR_KEY_HERE",
+        "N8N_BASE_URL": "https://your-n8n-instance.com"
+      }
+    },
+    "youtube": {
+      "command": "npx",
+      "args": ["-y", "@kimtaeyoon83/mcp-server-youtube"],
+      "env": {
+        "YOUTUBE_API_KEY": "YOUR_YOUTUBE_API_KEY"
       }
     },
     "notion": {
-      "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "args": ["-y", "@notionhq/mcp-server-notion"],
       "env": {
-        "NOTION_TOKEN": "your-notion-token-here"
+        "NOTION_API_KEY": "secret_YOUR_NOTION_KEY"
       }
     }
   }

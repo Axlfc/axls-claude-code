@@ -1,8 +1,52 @@
 # axls-claude-code
 
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Axlfc/axls-claude-code/releases)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-purple.svg)](https://claude.ai)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue.svg)](https://www.typescriptlang.org/)
+
 Este repositorio contiene un plugin para Claude Code diseñado para acelerar el desarrollo en un stack tecnológico específico: **Next.js, TypeScript, Fastify, PostgreSQL, Docker y Kubernetes**. Es un sistema de "Skills" y "Agentes" especializados, optimizado para los proyectos `cognito-stack`, `Tarragona Connect (TC)` y `RuneScript`.
 
-## Filosofía
+## ✨ Features
+
+### 🔧 Commands
+10 slash commands for rapid development tasks:
+- `/api-endpoint` - Generate API endpoint scaffolding
+- `/db-migration` - Create database migrations
+- `/component` - Generate React components
+- `/store-new` - Create Zustand stores
+- `/hook` - Generate custom React hooks
+- `/middleware` - Create Fastify middleware
+- `/workflow` - Generate n8n workflows
+- `/docker` - Generate Docker configurations
+- `/k8s` - Generate Kubernetes manifests
+- `/validate` - Create Zod validation schemas
+
+### 🤖 Agents
+6 specialized AI agents:
+- `frontend-architect` - Frontend design and architecture
+- `backend-engineer` - Backend infrastructure and optimization
+- `devops-engineer` - Infrastructure and deployment expertise
+- `db-architect` - Database design and optimization
+- `security-engineer` - Security audits and best practices
+- `code-reviewer` - Code quality and standards enforcement
+
+### 💡 Skills
+12 specialized workflow skills:
+- State management optimization
+- Database schema design
+- API endpoint generation
+- Component architecture
+- Performance optimization
+- Security hardening
+- Testing strategy
+- Documentation generation
+- Docker optimization
+- Kubernetes deployment
+- n8n workflow orchestration
+- Error handling patterns
+
+---
 
 Este plugin sigue el principio **"Don't Build Agents, Build Skills Instead"**:
 

@@ -47,6 +47,159 @@ You can add custom MCP servers to your local `.claude/.mcp.json`:
 }
 ```
 
+## Additional Recommended MCP Servers
+
+### GitHub MCP
+**Purpose:** Interact with GitHub repositories, issues, and pull requests
+
+**Installation:**
+```json
+{
+  "github": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-github"],
+    "env": {
+      "GITHUB_TOKEN": "your_github_personal_access_token"
+    }
+  }
+}
+```
+
+**Use Cases:**
+- Create issues programmatically
+- Review and comment on PRs
+- Search code across repositories
+- Manage project boards
+
+**Setup:**
+1. Generate GitHub Personal Access Token at https://github.com/settings/tokens
+2. Required scopes: `repo`, `read:org`
+3. Add to `.mcp.json` (or `.mcp.json.local` for private tokens)
+
+---
+
+### PostgreSQL MCP
+**Purpose:** Execute read-only database queries and analyze schemas
+
+**Installation:**
+```json
+{
+  "postgres": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-postgres"],
+    "env": {
+      "POSTGRES_CONNECTION_STRING": "postgresql://user:pass@localhost:5432/dbname"
+    }
+  }
+}
+```
+
+**Use Cases:**
+- Execute SELECT queries
+- Analyze table schemas
+- Generate migration suggestions
+- Explain query plans
+
+**Security:**
+- ⚠️ Only use read-only database users
+- ⚠️ Never expose production credentials
+- ✅ Use connection string from environment variable
+
+---
+
+### Docker MCP
+**Purpose:** Manage Docker containers and inspect Docker Compose services
+
+**Installation:**
+```json
+{
+  "docker": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-docker"],
+    "env": {
+      "DOCKER_HOST": "unix:///var/run/docker.sock"
+    }
+  }
+}
+```
+
+**Use Cases:**
+- List running containers
+- Inspect container logs
+- Check container health
+- View Docker Compose services
+
+**Requirements:**
+- Docker daemon running
+- User has Docker permissions
+
+---
+
+## Configuration Methods
+
+### Method 1: Global Configuration
+Create `~/.config/claude-code/.mcp.json`:
+```json
+{
+  "github": { ... },
+  "postgres": { ... },
+  "docker": { ... }
+}
+```
+
+### Method 2: Project-Level Configuration
+Create `.mcp.json` in project root:
+```json
+{
+  "postgres": {
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-postgres"],
+    "env": {
+      "POSTGRES_CONNECTION_STRING": "${POSTGRES_URL}"
+    }
+  }
+}
+```
+
+**Note:** Use `.mcp.json.local` for sensitive credentials (add to `.gitignore`)
+
+### Method 3: Environment Variables
+```bash
+# Add to ~/.bashrc or ~/.zshrc
+export GITHUB_TOKEN="your_token"
+export POSTGRES_URL="postgresql://..."
+
+# Then reference in .mcp.json
+{
+  "github": {
+    "env": {
+      "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+    }
+  }
+}
+```
+
+---
+
+## Security Best Practices
+
+1. **Never Commit Credentials:**
+   - Add `.mcp.json.local` to `.gitignore`
+   - Use environment variables
+   - Use secret management tools
+
+2. **Use Least Privilege:**
+   - Read-only database users
+   - Minimal GitHub token scopes
+   - Docker with limited permissions
+
+3. **Rotate Tokens Regularly:**
+   - GitHub tokens every 90 days
+   - Database passwords quarterly
+   - Revoke unused tokens immediately
+
+---
+
 ## Troubleshooting
 
 **MCP servers not loading?**
