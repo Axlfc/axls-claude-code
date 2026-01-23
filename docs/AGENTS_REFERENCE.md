@@ -6,7 +6,7 @@ This document lists all AI agents in axls-claude-code.
 
 ---
 
-## Active Agents (2)
+## Active Agents (4)
 
 ### mcp-finder
 **Purpose:** MCP server discovery and configuration helper
@@ -47,6 +47,61 @@ This document lists all AI agents in axls-claude-code.
 - Security best practices implementation
 - Compliance framework guidance
 - Threat modeling assistance
+
+---
+
+### observability-engineer
+**Purpose:** Monitoring and diagnostics for cognito-stack and Tarragona Connect
+
+**When to Use:**
+- Investigating errors or failures in services
+- Checking logs (Loki/LogQL queries)
+- Monitoring metrics (Prometheus/PromQL queries)
+- Health status of services
+- Performance troubleshooting
+
+**Key Capabilities:**
+- Query Loki logs with LogQL
+- Query Prometheus metrics with PromQL
+- Diagnose common issues (OOM, crashes, connectivity)
+- Service-specific knowledge (Ollama, n.d.n, PostgreSQL, Qdrant)
+
+**Example Queries:**
+- "Show me errors from Ollama in the last 2 hours"
+- "What's the CPU usage of n.d.n?"
+- "Are all cognito-stack services healthy?"
+
+**Invocation:** Automatically activates on logs, metrics, monitoring queries
+
+---
+
+### cicd-engineer
+**Purpose:** CI/CD pipeline management and deployment automation
+
+**When to Use:**
+- Checking pipeline status
+- Investigating CI/CD failures
+- Triggering deployments
+- Managing releases
+- Rollback operations
+
+**Key Capabilities:**
+- Query Forgejo API for pipeline status
+- Parse CI/CD logs and diagnose failures
+- Trigger manual deployments
+- Verify deployment status in Kubernetes
+- Release management (tags, changelogs)
+
+**Repositories:**
+- Tarragona Connect (primary)
+- cognito-stack (secondary)
+
+**Example Queries:**
+- "Did the last build of main pass?"
+- "Why did the deployment to staging fail?"
+- "Deploy feature-auth branch to staging"
+
+**Invocation:** Automatically activates on ci/cd, pipeline, deployment queries
 
 ---
 

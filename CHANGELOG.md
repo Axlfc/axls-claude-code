@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-01-24
+
+### Added
+- New agent: `observability-engineer` for logs and metrics monitoring
+  - Loki/LogQL integration for log querying
+  - Prometheus/PromQL integration for metrics
+  - Service health checks for cognito-stack
+- New agent: `cicd-engineer` for CI/CD automation
+  - Forgejo API integration for pipeline management
+  - Kubernetes deployment verification
+  - Automated deployment triggers
+
+### Changed
+- Agent count increased from 2 to 4
+- Enhanced monitoring capabilities with observability-engineer
+- Improved CI/CD workflow automation with cicd-engineer
+
+[1.3.0]: https://github.com/Axlfc/axls-claude-code/compare/v1.2.1...v1.3.0
+
 ## [1.2.1] - 2026-01-23
 
 ### Fixed
