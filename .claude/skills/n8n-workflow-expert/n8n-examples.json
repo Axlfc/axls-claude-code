@@ -1,0 +1,287 @@
+{
+  "workflows": [
+    {
+      "name": "Email to Vector Storage",
+      "description": "Receives email, extracts text, generates embedding, stores in Qdrant",
+      "nodes": [
+        {
+          "id": "webhook",
+          "type": "Webhook",
+          "parameters": {
+            "httpMethod": "POST",
+            "path": "email-processor",
+            "responseMode": "onReceived"
+          }
+        },
+        {
+          "id": "extract-text",
+          "type": "Code",
+          "parameters": {
+            "jsCode": "const email = $node['webhook'].json;\nreturn {\n  from: email.from,\n  subject: email.subject,\n  body: email.body,\n  combined: `${email.subject}\\n${email.body}`\n};"
+          }
+        },
+        {
+          "id": "generate-embedding",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "http://ollama:11434/api/embeddings",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"model\": \"nomic-embed-text\", \"prompt\": \"{{ $node['extract-text'].json.combined }}\"}"
+          }
+        },
+        {
+          "id": "store-vector",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "http://qdrant:6333/collections/emails/points",
+            "method": "PUT",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"points\": [{\"id\": \"{{ $node['webhook'].json.id }}\", \"vector\": \"{{ $node['generate-embedding'].json.embedding }}\", \"payload\": {\"from\": \"{{ $node['extract-text'].json.from }}\", \"subject\": \"{{ $node['extract-text'].json.subject }}\", \"created_at\": \"{{ now.iso }}\", \"metadata\": \"email\"}}]}"
+          }
+        },
+        {
+          "id": "store-metadata",
+          "type": "PostgreSQL",
+          "parameters": {
+            "query": "INSERT INTO email_index (id, from_addr, subject, body_preview, created_at) VALUES ($1, $2, $3, $4, NOW()) RETURNING id;",
+            "queryParams": [
+              "{{ $node['webhook'].json.id }}",
+              "{{ $node['extract-text'].json.from }}",
+              "{{ $node['extract-text'].json.subject }}",
+              "{{ $node['extract-text'].json.body.substring(0, 500) }}"
+            ]
+          }
+        },
+        {
+          "id": "response",
+          "type": "RespondToWebhook",
+          "parameters": {
+            "statusCode": "200",
+            "body": "{\"status\": \"processed\", \"id\": \"{{ $node['store-metadata'].json[0].id }}\"}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Semantic Search with AI Response",
+      "description": "Accept query, search similar documents, generate AI response with context",
+      "nodes": [
+        {
+          "id": "webhook-query",
+          "type": "Webhook",
+          "parameters": {
+            "httpMethod": "POST",
+            "path": "search-and-answer"
+          }
+        },
+        {
+          "id": "encode-query",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "http://ollama:11434/api/embeddings",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"model\": \"nomic-embed-text\", \"prompt\": \"{{ $node['webhook-query'].json.query }}\"}"
+          }
+        },
+        {
+          "id": "search-qdrant",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "http://qdrant:6333/collections/documents/points/search",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"vector\": \"{{ $node['encode-query'].json.embedding }}\", \"limit\": 5, \"with_payload\": true}"
+          }
+        },
+        {
+          "id": "format-context",
+          "type": "Code",
+          "parameters": {
+            "jsCode": "const results = $node['search-qdrant'].json.result || [];\nconst context = results.map((r, i) => `[${(r.score * 100).toFixed(1)}%] ${r.payload.text}`).join('\\n\\n');\nreturn {\n  context: context,\n  count: results.length,\n  avgScore: results.length > 0 ? (results.reduce((s, r) => s + r.score, 0) / results.length * 100).toFixed(1) : 0\n};"
+          }
+        },
+        {
+          "id": "call-ollama",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "http://ollama:11434/api/chat",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"model\": \"mistral\", \"messages\": [{\"role\": \"system\", \"content\": \"Answer based on this context:\\n\\n{{ $node['format-context'].json.context }}\"}, {\"role\": \"user\", \"content\": \"{{ $node['webhook-query'].json.query }}\"}], \"stream\": false, \"temperature\": 0.5}"
+          }
+        },
+        {
+          "id": "store-conversation",
+          "type": "PostgreSQL",
+          "parameters": {
+            "query": "INSERT INTO conversations (user_id, query, response, context_used, score, created_at) VALUES ($1, $2, $3, $4, $5, NOW()) RETURNING id;",
+            "queryParams": [
+              "{{ $node['webhook-query'].json.user_id || 'anonymous' }}",
+              "{{ $node['webhook-query'].json.query }}",
+              "{{ $node['call-ollama'].json.message.content }}",
+              "{{ $node['format-context'].json.count }}",
+              "{{ $node['format-context'].json.avgScore }}"
+            ]
+          }
+        },
+        {
+          "id": "response-answer",
+          "type": "RespondToWebhook",
+          "parameters": {
+            "statusCode": "200",
+            "body": "{\"answer\": \"{{ $node['call-ollama'].json.message.content }}\", \"sources_used\": {{ $node['format-context'].json.count }}, \"confidence\": {{ $node['format-context'].json.avgScore }}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Daily Document Enrichment",
+      "description": "Scheduled job to enrich documents with embeddings and AI categorization",
+      "nodes": [
+        {
+          "id": "scheduler",
+          "type": "Scheduler",
+          "parameters": {
+            "mode": "everyDayAt",
+            "atTime": "02:00"
+          }
+        },
+        {
+          "id": "fetch-documents",
+          "type": "PostgreSQL",
+          "parameters": {
+            "query": "SELECT id, content, category FROM documents WHERE enriched = false AND created_at > NOW() - INTERVAL '1 day' LIMIT 1000;"
+          }
+        },
+        {
+          "id": "loop-documents",
+          "type": "Loop",
+          "parameters": {
+            "source": "{{ $node['fetch-documents'].json }}"
+          }
+        },
+        {
+          "id": "generate-embedding-batch",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "http://ollama:11434/api/embeddings",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"model\": \"nomic-embed-text\", \"prompt\": \"{{ $node['loop-documents'].json.content }}\"}"
+          }
+        },
+        {
+          "id": "categorize-document",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "http://ollama:11434/api/chat",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"model\": \"mistral\", \"messages\": [{\"role\": \"user\", \"content\": \"Categorize this document into one of: technical, business, marketing, other. Document: {{ $node['loop-documents'].json.content.substring(0, 500) }}. Respond with only the category.\"}], \"stream\": false}"
+          }
+        },
+        {
+          "id": "store-enrichment",
+          "type": "PostgreSQL",
+          "parameters": {
+            "query": "UPDATE documents SET embedding = $1, ai_category = $2, enriched = true, enriched_at = NOW() WHERE id = $3;",
+            "queryParams": [
+              "{{ $node['generate-embedding-batch'].json.embedding }}",
+              "{{ $node['categorize-document'].json.message.content.toLowerCase() }}",
+              "{{ $node['loop-documents'].json.id }}"
+            ]
+          }
+        },
+        {
+          "id": "store-enrichment-vector",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "http://qdrant:6333/collections/documents/points",
+            "method": "PUT",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": "{\"points\": [{\"id\": \"{{ $node['loop-documents'].json.id }}\", \"vector\": \"{{ $node['generate-embedding-batch'].json.embedding }}\", \"payload\": {\"category\": \"{{ $node['categorize-document'].json.message.content }}\", \"enriched_at\": \"{{ now.iso }}\"}}]}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error Handling Example",
+      "description": "Demonstrates robust error handling with retries and fallbacks",
+      "nodes": [
+        {
+          "id": "trigger",
+          "type": "Webhook",
+          "parameters": {
+            "httpMethod": "POST"
+          }
+        },
+        {
+          "id": "api-call-with-retry",
+          "type": "HTTPRequest",
+          "parameters": {
+            "url": "{{ $node['trigger'].json.api_url }}",
+            "method": "{{ $node['trigger'].json.method || 'GET' }}",
+            "timeout": 30000,
+            "retry": {
+              "limit": 3,
+              "maxBackoff": 60000
+            }
+          }
+        },
+        {
+          "id": "error-handler",
+          "type": "ErrorHandler",
+          "parameters": {
+            "triggerNode": "api-call-with-retry"
+          }
+        },
+        {
+          "id": "log-error",
+          "type": "PostgreSQL",
+          "parameters": {
+            "query": "INSERT INTO error_logs (error_type, error_message, request_url, timestamp) VALUES ($1, $2, $3, NOW());",
+            "queryParams": [
+              "{{ $node['error-handler'].json.error.name }}",
+              "{{ $node['error-handler'].json.error.message }}",
+              "{{ $node['trigger'].json.api_url }}"
+            ]
+          }
+        },
+        {
+          "id": "send-alert",
+          "type": "Slack",
+          "parameters": {
+            "channel": "#alerts",
+            "text": "API call failed: {{ $node['error-handler'].json.error.message }}"
+          }
+        },
+        {
+          "id": "fallback-response",
+          "type": "RespondToWebhook",
+          "parameters": {
+            "statusCode": "503",
+            "body": "{\"status\": \"error\", \"message\": \"Service temporarily unavailable\"}"
+          }
+        }
+      ]
+    }
+  ]
+}

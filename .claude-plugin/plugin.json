@@ -64,6 +64,26 @@
       "name": "n8n-workflow-patterns",
       "path": ".claude/skills/n8n-workflow-patterns/SKILL.md",
       "description": "Proven workflow architectural patterns from real n8n workflows. Use when building new workflows, designing workflow structure, choosing workflow patterns, planning workflow architecture, or asking about webhook processing, HTTP API integration, database operations, AI agent workflows, or scheduled tasks."
+    },
+    {
+      "name": "devops-engineer",
+      "path": ".claude/skills/devops-engineer/SKILL.md",
+      "description": "Senior DevOps engineer expertise for containerization, Kubernetes orchestration, CI/CD automation, and infrastructure observability. Auto-activates on Docker, K8s, and deployment topics."
+    },
+    {
+      "name": "n8n-workflow-expert",
+      "path": ".claude/skills/n8n-workflow-expert/SKILL.md",
+      "description": "Expert guidance for designing and implementing complex n8n workflows with integration patterns for Ollama, Qdrant, and PostgreSQL. Auto-activates on n8n, workflow, and automation topics."
+    },
+    {
+      "name": "postgres-expert",
+      "path": ".claude/skills/postgres-expert/SKILL.md",
+      "description": "Master PostgreSQL database design, optimization, and performance tuning. Expert guidance on schemas, indexing, query optimization, and data integrity. Auto-activates on PostgreSQL and database topics."
+    },
+    {
+      "name": "zustand-expert",
+      "path": ".claude/skills/zustand-expert/SKILL.md",
+      "description": "Expert Zustand state management architecture for Tarragona Connect. Specialized in store design, persistence migration, and performance optimization. Auto-activates on store and state management topics."
     }
   ],
   "commands": [
@@ -120,34 +140,14 @@
   ],
   "agents": [
     {
-      "name": "devops-engineer",
-      "path": ".claude/agents/devops-engineer.md",
-      "description": "Especialista en Docker, Kubernetes, CI/CD y observabilidad para cognito-stack."
-    },
-    {
       "name": "mcp-finder",
       "path": ".claude/agents/mcp-finder.md",
       "description": "Searches online to find MCP servers. SPAWNED BY create-mcp skill after identifying user needs. Searches NPM, GitHub, and MCP directories to find the best options."
     },
     {
-      "name": "n8n-workflow-expert",
-      "path": ".claude/agents/n8n-workflow-expert.md",
-      "description": "Experto en diseño de workflows n8n, integración con Ollama, Qdrant y task runners."
-    },
-    {
-      "name": "postgres-expert",
-      "path": ".claude/agents/postgres-expert.md",
-      "description": "Especialista en diseño de BD, migraciones y optimización de queries para PostgreSQL."
-    },
-    {
       "name": "security-engineer",
       "path": ".claude/agents/security-engineer.md",
       "description": "Experto en compliance ENS/RGPD, seguridad de contenedores y auditoría."
-    },
-    {
-      "name": "zustand-expert",
-      "path": ".claude/agents/zustand-expert.md",
-      "description": "Experto en gestión de estado con Zustand para Tarragona Connect."
     }
   ],
   "mcpServers": {
