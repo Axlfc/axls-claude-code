@@ -27,14 +27,35 @@ else
     exit 1
 fi
 
-# --- 3. Count Components ---
+# --- 3. Count and Verify Components ---
+EXPECTED_AGENTS=2
+EXPECTED_SKILLS=18
+EXPECTED_COMMANDS=10
+
+AGENT_COUNT=$(jq '.agents | length' "$PLUGIN_JSON")
 SKILL_COUNT=$(jq '.skills | length' "$PLUGIN_JSON")
 CMD_COUNT=$(jq '.commands | length' "$PLUGIN_JSON")
-AGENT_COUNT=$(jq '.agents | length' "$PLUGIN_JSON")
 
-echo "Counting skills... ${GREEN}OK${NC} ($SKILL_COUNT skills)"
-echo "Counting commands... ${GREEN}OK${NC} ($CMD_COUNT commands)"
-echo "Counting agents... ${GREEN}OK${NC} ($AGENT_COUNT agents)"
+if [ "$AGENT_COUNT" -eq "$EXPECTED_AGENTS" ]; then
+    echo "Checking agent count... ${GREEN}OK${NC} ($AGENT_COUNT/$EXPECTED_AGENTS)"
+else
+    echo "Checking agent count... ${RED}FAIL: Expected $EXPECTED_AGENTS, found $AGENT_COUNT${NC}"
+    exit 1
+fi
+
+if [ "$SKILL_COUNT" -eq "$EXPECTED_SKILLS" ]; then
+    echo "Checking skill count... ${GREEN}OK${NC} ($SKILL_COUNT/$EXPECTED_SKILLS)"
+else
+    echo "Checking skill count... ${RED}FAIL: Expected $EXPECTED_SKILLS, found $SKILL_COUNT${NC}"
+    exit 1
+fi
+
+if [ "$CMD_COUNT" -eq "$EXPECTED_COMMANDS" ]; then
+    echo "Checking command count... ${GREEN}OK${NC} ($CMD_COUNT/$EXPECTED_COMMANDS)"
+else
+    echo "Checking command count... ${RED}FAIL: Expected $EXPECTED_COMMANDS, found $CMD_COUNT${NC}"
+    exit 1
+fi
 
 # --- 4. Check Command Frontmatters ---
 echo "Checking command frontmatters..."

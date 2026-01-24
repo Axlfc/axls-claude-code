@@ -1,10 +1,10 @@
 # Skills Reference
 
-Complete reference for all 16 specialized skills in axls-claude-code.
+Complete reference for all 18 specialized skills in axls-claude-code.
 
 **Quick Stats:**
-- **Total Skills:** 16
-- **Categories:** 5 (Creation, DevOps, Database, State Management, n8n Automation)
+- **Total Skills:** 18
+- **Categories:** 7 (Creation, DevOps, Database, State Management, n8n Automation, Security, Observability)
 - **Supporting Documentation:** 50+ specialized guides
 - **Production Examples:** Included in all skills
 
@@ -333,6 +333,53 @@ These skills help you create new agents, commands, hooks, MCP servers, and skill
 - Scaling workflows
 
 **Trigger Keywords:** `workflow pattern`, `architecture pattern`, `n8n pattern`
+
+---
+
+## Security & Compliance Skills
+
+### security-auditing
+**Description:** Security auditing, vulnerability identification, and infrastructure hardening
+
+**Location:** `.claude/skills/security-auditing/`
+
+**Key Features:**
+- OWASP Top 10 vulnerability identification
+- Container & Kubernetes security hardening
+- API security (JWT, OAuth2, rate limiting)
+- Secure coding practices (input validation, XSS prevention)
+- Compliance with security standards
+
+**Supporting Files:**
+- `owasp-top-10.md` - OWASP vulnerability guide
+- `container-security.md` - Docker/K8s hardening
+- `api-security-patterns.md` - API security patterns
+
+**Trigger Keywords:** `security`, `vulnerability`, `audit`, `hardening`, `owasp`, `xss`, `sql injection`, `authentication`, `authorization`
+
+---
+
+## Monitoring & Observability Skills
+
+### observability
+**Description:** Logs, metrics, and monitoring for distributed systems
+
+**Location:** `.claude/skills/observability/`
+
+**Key Features:**
+- Loki/LogQL for log querying
+- Prometheus/PromQL for metrics
+- Service health checks
+- Performance troubleshooting
+- cognito-stack & TC service knowledge
+
+**Supporting Files:**
+- `logql-cookbook.md` - LogQL query patterns
+- `promql-cookbook.md` - PromQL query examples
+- `common-issues.md` - Troubleshooting guide
+- `alerting-rules.md` - Alert configuration
+
+**Trigger Keywords:** `logs`, `metrics`, `monitoring`, `loki`, `prometheus`, `grafana`, `observability`, `health check`, `performance`, `error`
 
 ---
 

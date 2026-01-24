@@ -1,6 +1,6 @@
 {
   "name": "axls-claude-code",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Axl's personal Claude Code for modern development",
   "author": "Axl",
   "license": "MIT",
@@ -84,6 +84,14 @@
       "name": "zustand-expert",
       "path": ".claude/skills/zustand-expert/SKILL.md",
       "description": "Expert Zustand state management architecture for Tarragona Connect. Specialized in store design, persistence migration, and performance optimization. Auto-activates on store and state management topics."
+    },
+    {
+        "name": "security-auditing",
+        "path": ".claude/skills/security-auditing/SKILL.md"
+    },
+    {
+        "name": "observability",
+        "path": ".claude/skills/observability/SKILL.md"
     }
   ],
   "commands": [
@@ -143,16 +151,6 @@
       "name": "mcp-finder",
       "path": ".claude/agents/mcp-finder.md",
       "description": "Searches online to find MCP servers. SPAWNED BY create-mcp skill after identifying user needs. Searches NPM, GitHub, and MCP directories to find the best options."
-    },
-    {
-      "name": "security-engineer",
-      "path": ".claude/agents/security-engineer.md",
-      "description": "Experto en compliance ENS/RGPD, seguridad de contenedores y auditoría."
-    },
-    {
-      "name": "observability-engineer",
-      "path": ".claude/agents/observability-engineer.md",
-      "description": "Handles queries about logs, metrics, monitoring, health status, and performance troubleshooting. Use for Loki, LogQL, Prometheus, PromQL, and Grafana related questions for services like Ollama, n8n, PostgreSQL, and Qdrant in the cognito-stack."
     },
     {
       "name": "cicd-engineer",
