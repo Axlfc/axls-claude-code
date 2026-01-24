@@ -45,23 +45,19 @@ Este repositorio contiene un plugin para Claude Code diseñado para acelerar el 
 - `/k8s` - Generate Kubernetes manifests
 - `/validate` - Create Zod validation schemas
 
-### 🤖 4 AI Agents
-- `mcp-finder` - MCP server discovery and configuration
-- `security-engineer` - Security auditing and hardening
-- `observability-engineer` - Logs, metrics, and monitoring (Loki, Prometheus)
-- `cicd-engineer` - CI/CD pipelines and deployments (Forgejo, K8s)
+### 🤖 2 AI Agents (Coordinators)
+- **mcp-finder** - MCP server discovery and `.mcp.json` configuration
+- **cicd-engineer** - CI/CD automation with Forgejo and Kubernetes
 
-### 🎯 16 Specialized Skills
+### 🎯 18 Specialized Skills (Knowledge Domains)
 
 **Creation Tools:**
-- `create-agent` - Build Claude Code agents
-- `create-command` - Build slash commands
-- `create-hook` - Create automation hooks
-- `create-mcp` - Configure MCP servers
-- `create-skill` - Create new skills
+- `create-agent`, `create-command`, `create-hook`, `create-mcp`, `create-skill`
 
 **DevOps & Infrastructure:**
-- `devops-engineer` - Docker, Kubernetes, CI/CD, observability
+- `devops-engineer` - Docker, Kubernetes, CI/CD patterns
+- `observability` - Logs (Loki), metrics (Prometheus), monitoring
+- `security-auditing` - Vulnerability scanning, hardening, compliance
 
 **Database:**
 - `postgres-expert` - Schema design, query optimization, indexing
@@ -70,14 +66,14 @@ Este repositorio contiene un plugin para Claude Code diseñado para acelerar el 
 - `zustand-expert` - Store patterns, persistence, TC stores
 
 **n8n Workflow Automation:**
-- `n8n-code-javascript` - JavaScript in n8n Code nodes
-- `n8n-code-python` - Python in n8n Code nodes
-- `n8n-expression-syntax` - n8n expression validation
-- `n8n-mcp-tools-expert` - n8n MCP tools guide
-- `n8n-node-configuration` - Node configuration help
-- `n8n-validation-expert` - Validation error interpretation
-- `n8n-workflow-patterns` - Workflow architectural patterns
-- `n8n-workflow-expert` - Complete workflow design and optimization
+- `n8n-workflow-expert` - Complete workflow design
+- `n8n-code-javascript` - JavaScript Code nodes
+- `n8n-code-python` - Python Code nodes
+- `n8n-expression-syntax` - Expression validation
+- `n8n-mcp-tools-expert` - MCP tools integration
+- `n8n-node-configuration` - Node setup
+- `n8n-validation-expert` - Error interpretation
+- `n8n-workflow-patterns` - Architectural patterns
 
 ---
 

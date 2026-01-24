@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-01-24
+
+### Changed
+- **BREAKING:** Converted agents to skills following Anthropic best practices
+  - `security-engineer` → `security-auditing` skill
+  - `observability-engineer` → `observability` skill
+- Agent count reduced from 4 to 2 (coordination-focused agents only)
+- Skill count increased from 16 to 18
+
+### Added
+- `security-auditing` skill with progressive disclosure (OWASP, container security)
+- `observability` skill with LogQL/PromQL integration
+
+### Removed
+- `security-engineer` agent (converted to skill)
+- `observability-engineer` agent (converted to skill)
+
+### Philosophy
+Skills are now the primary extension mechanism, with agents reserved for coordination tasks only. This aligns with Anthropic's modern best practices.
+
+[1.4.0]: https://github.com/Axlfc/axls-claude-code/compare/v1.3.0...v1.4.0
+
 ## [1.3.0] - 2026-01-24
 
 ### Added
