@@ -8,160 +8,40 @@
   },
   "license": "MIT",
   "skills": [
-    {
-      "name": "create-agent",
-      "path": ".claude/skills/create-agent/SKILL.md",
-      "description": "Create subagents for Claude Code. USE WHEN user says 'create an agent', 'make an agent', 'add an agent', 'new agent for', 'build an agent', 'I need a specialist for', 'delegate this to', 'autonomous worker for'."
-    },
-    {
-      "name": "create-command",
-      "path": ".claude/skills/create-command/SKILL.md",
-      "description": "Create slash commands for Claude Code. USE WHEN user says 'create a command', 'make a command', 'add a command', 'new slash command', 'build a command for', 'I need a shortcut for', 'make a quick action', 'automate this action'."
-    },
-    {
-      "name": "create-hook",
-      "path": ".claude/skills/create-hook/SKILL.md",
-      "description": "Create hooks for Claude Code automation. USE WHEN user says 'create a hook', 'add a hook', 'automate when', 'trigger when', 'run automatically', 'after I save', 'before I commit', 'when file changes'."
-    },
-    {
-      "name": "create-mcp",
-      "path": ".claude/skills/create-mcp/SKILL.md",
-      "description": "Add, configure, or build MCP servers in Claude Code. USE WHEN user says 'add an MCP', 'connect to', 'add integration', 'setup MCP', 'connect MCP server', 'add notion', 'add youtube', 'configure MCP', 'build an MCP', 'create MCP server'."
-    },
-    {
-      "name": "create-skill",
-      "path": ".claude/skills/create-skill/SKILL.md",
-      "description": "Create new skills for Claude Code. USE WHEN user says 'create a skill', 'build a skill', 'make a skill for', 'add a skill', 'new skill for', 'I need a skill that', 'teach claude to', 'make claude do', 'automate [task]'."
-    },
-    {
-      "name": "n8n-code-javascript",
-      "path": ".claude/skills/n8n-code-javascript/SKILL.md",
-      "description": "Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with $helpers, working with dates using DateTime, troubleshooting Code node errors, or choosing between Code node modes."
-    },
-    {
-      "name": "n8n-code-python",
-      "path": ".claude/skills/n8n-code-python/SKILL.md",
-      "description": "Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to understand Python limitations in n8n Code nodes."
-    },
-    {
-      "name": "n8n-expression-syntax",
-      "path": ".claude/skills/n8n-expression-syntax/SKILL.md",
-      "description": "Validate n8n expression syntax and fix common errors. Use when writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troubleshooting expression errors, or working with webhook data in workflows."
-    },
-    {
-      "name": "n8n-mcp-tools-expert",
-      "path": ".claude/skills/n8n-mcp-tools-expert/SKILL.md",
-      "description": "Expert guide for using n8n-mcp MCP tools effectively. Use when searching for nodes, validating configurations, accessing templates, managing workflows, or using any n8n-mcp tool. Provides tool selection guidance, parameter formats, and common patterns."
-    },
-    {
-      "name": "n8n-node-configuration",
-      "path": ".claude/skills/n8n-node-configuration/SKILL.md",
-      "description": "Operation-aware node configuration guidance. Use when configuring nodes, understanding property dependencies, determining required fields, choosing between get_node detail levels, or learning common configuration patterns by node type."
-    },
-    {
-      "name": "n8n-validation-expert",
-      "path": ".claude/skills/n8n-validation-expert/SKILL.md",
-      "description": "Interpret validation errors and guide fixing them. Use when encountering validation errors, validation warnings, false positives, operator structure issues, or need help understanding validation results. Also use when asking about validation profiles, error types, or the validation loop process."
-    },
-    {
-      "name": "n8n-workflow-patterns",
-      "path": ".claude/skills/n8n-workflow-patterns/SKILL.md",
-      "description": "Proven workflow architectural patterns from real n8n workflows. Use when building new workflows, designing workflow structure, choosing workflow patterns, planning workflow architecture, or asking about webhook processing, HTTP API integration, database operations, AI agent workflows, or scheduled tasks."
-    },
-    {
-      "name": "devops-engineer",
-      "path": ".claude/skills/devops-engineer/SKILL.md",
-      "description": "Senior DevOps engineer expertise for containerization, Kubernetes orchestration, CI/CD automation, and infrastructure observability. Auto-activates on Docker, K8s, and deployment topics."
-    },
-    {
-      "name": "n8n-workflow-expert",
-      "path": ".claude/skills/n8n-workflow-expert/SKILL.md",
-      "description": "Expert guidance for designing and implementing complex n8n workflows with integration patterns for Ollama, Qdrant, and PostgreSQL. Auto-activates on n8n, workflow, and automation topics."
-    },
-    {
-      "name": "postgres-expert",
-      "path": ".claude/skills/postgres-expert/SKILL.md",
-      "description": "Master PostgreSQL database design, optimization, and performance tuning. Expert guidance on schemas, indexing, query optimization, and data integrity. Auto-activates on PostgreSQL and database topics."
-    },
-    {
-      "name": "zustand-expert",
-      "path": ".claude/skills/zustand-expert/SKILL.md",
-      "description": "Expert Zustand state management architecture for Tarragona Connect. Specialized in store design, persistence migration, and performance optimization. Auto-activates on store and state management topics."
-    },
-    {
-      "name": "security-auditing",
-      "path": ".claude/skills/security-auditing/SKILL.md",
-      "description": "Security auditing, vulnerability identification, and infrastructure hardening for web applications, APIs, and infrastructure."
-    },
-    {
-      "name": "observability",
-      "path": ".claude/skills/observability/SKILL.md",
-      "description": "Observability, monitoring, and diagnostics for distributed systems using Loki, Prometheus, and Grafana."
-    }
+    ".claude/skills/create-agent/SKILL.md",
+    ".claude/skills/create-command/SKILL.md",
+    ".claude/skills/create-hook/SKILL.md",
+    ".claude/skills/create-mcp/SKILL.md",
+    ".claude/skills/create-skill/SKILL.md",
+    ".claude/skills/n8n-code-javascript/SKILL.md",
+    ".claude/skills/n8n-code-python/SKILL.md",
+    ".claude/skills/n8n-expression-syntax/SKILL.md",
+    ".claude/skills/n8n-mcp-tools-expert/SKILL.md",
+    ".claude/skills/n8n-node-configuration/SKILL.md",
+    ".claude/skills/n8n-validation-expert/SKILL.md",
+    ".claude/skills/n8n-workflow-patterns/SKILL.md",
+    ".claude/skills/devops-engineer/SKILL.md",
+    ".claude/skills/n8n-workflow-expert/SKILL.md",
+    ".claude/skills/postgres-expert/SKILL.md",
+    ".claude/skills/zustand-expert/SKILL.md",
+    ".claude/skills/security-auditing/SKILL.md",
+    ".claude/skills/observability/SKILL.md"
   ],
   "commands": [
-    {
-      "name": "api-endpoint",
-      "path": ".claude/commands/api-endpoint.md",
-      "description": "Genera un endpoint de API REST completo para Fastify con validación, tipos, middleware y tests."
-    },
-    {
-      "name": "component-new",
-      "path": ".claude/commands/component-new.md",
-      "description": "Genera un nuevo componente React para Tarragona Connect (TC) con shadcn/ui y Tailwind CSS."
-    },
-    {
-      "name": "db-migration",
-      "path": ".claude/commands/db-migration.md",
-      "description": "Genera archivos de migración de base de datos SQL versionados para PostgreSQL."
-    },
-    {
-      "name": "docker-service",
-      "path": ".claude/commands/docker-service.md",
-      "description": "Añade un nuevo servicio a un stack Docker Compose siguiendo las mejores prácticas."
-    },
-    {
-      "name": "k8s-manifest",
-      "path": ".claude/commands/k8s-manifest.md",
-      "description": "Genera manifiestos de Kubernetes (Deployment, Service, Ingress) para un servicio."
-    },
-    {
-      "name": "lint-fix",
-      "path": ".claude/commands/lint-fix.md",
-      "description": "Formatea y corrige errores de linting en un fragmento de código usando Prettier y ESLint/Ruff."
-    },
-    {
-      "name": "new-workflow",
-      "path": ".claude/commands/new-workflow.md",
-      "description": "Genera un scaffolding para un workflow de n8n con integración a servicios de cognito-stack."
-    },
-    {
-      "name": "sentry-integration",
-      "path": ".claude/commands/sentry-integration.md",
-      "description": "Genera la configuración completa para integrar Sentry en una aplicación (React/Fastify)."
-    },
-    {
-      "name": "store-new",
-      "path": ".claude/commands/store-new.md",
-      "description": "Genera un nuevo store de Zustand para la gestión de estado en Tarragona Connect (TC)."
-    },
-    {
-      "name": "test-gen",
-      "path": ".claude/commands/test-gen.md",
-      "description": "Genera tests unitarios (Jest/Pytest) o de integración para un fragmento de código."
-    }
+    ".claude/commands/api-endpoint.md",
+    ".claude/commands/component-new.md",
+    ".claude/commands/db-migration.md",
+    ".claude/commands/docker-service.md",
+    ".claude/commands/k8s-manifest.md",
+    ".claude/commands/lint-fix.md",
+    ".claude/commands/new-workflow.md",
+    ".claude/commands/sentry-integration.md",
+    ".claude/commands/store-new.md",
+    ".claude/commands/test-gen.md"
   ],
   "agents": [
-    {
-      "name": "mcp-finder",
-      "path": ".claude/agents/mcp-finder.md",
-      "description": "Searches online to find MCP servers. SPAWNED BY create-mcp skill after identifying user needs. Searches NPM, GitHub, and MCP directories to find the best options."
-    },
-    {
-      "name": "cicd-engineer",
-      "path": ".claude/agents/cicd-engineer.md",
-      "description": "Handles queries about CI/CD, pipelines, deployments, builds, and releases. Interacts with Forgejo and Kubernetes to manage workflows for Tarragona Connect and cognito-stack."
-    }
+    ".claude/agents/mcp-finder.md",
+    ".claude/agents/cicd-engineer.md"
   ],
   "mcpServers": {
     "youtube": {
