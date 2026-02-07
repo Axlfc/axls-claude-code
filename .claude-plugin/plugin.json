@@ -2,7 +2,10 @@
   "name": "axls-claude-code",
   "version": "1.4.0",
   "description": "Axl's personal Claude Code for modern development",
-  "author": "Axl",
+  "author": {
+    "name": "Axl",
+    "url": "https://github.com/axlfc"
+  },
   "license": "MIT",
   "skills": [
     {
@@ -86,12 +89,14 @@
       "description": "Expert Zustand state management architecture for Tarragona Connect. Specialized in store design, persistence migration, and performance optimization. Auto-activates on store and state management topics."
     },
     {
-        "name": "security-auditing",
-        "path": ".claude/skills/security-auditing/SKILL.md"
+      "name": "security-auditing",
+      "path": ".claude/skills/security-auditing/SKILL.md",
+      "description": "Security auditing, vulnerability identification, and infrastructure hardening for web applications, APIs, and infrastructure."
     },
     {
-        "name": "observability",
-        "path": ".claude/skills/observability/SKILL.md"
+      "name": "observability",
+      "path": ".claude/skills/observability/SKILL.md",
+      "description": "Observability, monitoring, and diagnostics for distributed systems using Loki, Prometheus, and Grafana."
     }
   ],
   "commands": [
@@ -160,20 +165,19 @@
   ],
   "mcpServers": {
     "youtube": {
+      "type": "http",
+      "url": "http://localhost:3000",
       "description": "Access YouTube data and analytics."
     },
     "n8n-mcp": {
+      "type": "http",
+      "url": "http://localhost:3001",
       "description": "Build, validate, and deploy n8n workflows."
     },
     "notion": {
+      "type": "http",
+      "url": "http://localhost:3002",
       "description": "Save insights and structured data to Notion."
     }
-  },
-  "tags": [
-    "productivity",
-    "api",
-    "development",
-    "mcp",
-    "n8n"
-  ]
+  }
 }
